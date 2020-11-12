@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="['/contacts/detail/', loadedContact.id]"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list>
+      <!-- <ion-item>
+        <ion-label position="stacked">Id</ion-label>
+        <ion-input type="text" [(ngModel)]="id" name="id" hidden value="{{loadedContact.id}}"></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-label position="stacked">Nama</ion-label>
+        <ion-input type="text" ngModel="{{loadedContact.nama}}" name="nama" value="{{loadedContact.nama}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nomor Telepon</ion-label>
+        <ion-input type="text" ngModel="{{loadedContact.phone}}" name="phone" value="{{loadedContact.phone}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="text" ngModel="{{loadedContact.email}}" name="email" value="{{loadedContact.email}}"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" solor="primary" expand="full">Simpan</ion-button>
+  </form>
+</ion-content>

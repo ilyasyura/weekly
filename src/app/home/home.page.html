@@ -1,20 +1,38 @@
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="weekly"></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Blank
+      Pemrograman Mobile Cross-Platform
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        <h1>Week 08</h1>
+      </ion-label>
+    </ion-list-header>
+    <ion-item [routerLink]="['/students1']">
+      <ion-label>Students1</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/students2']">
+      <ion-label>Students2</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/students3']">
+      <ion-label>Students3</ion-label>
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-list-header>
+      <ion-label>
+        <h1>Week 09</h1>
+      </ion-label>
+    </ion-list-header>
+    <ion-item [routerLink]="['/week9/index']">
+      <ion-label>Practice</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

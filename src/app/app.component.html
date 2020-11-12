@@ -1,3 +1,26 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="weekly">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>What you wanna do?</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle menu="weekly">
+          <ion-item lines="none" routerLink="/home">
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="weekly">
+          <ion-item lines="none" routerLink="/contacts">
+            <ion-icon name="call-outline" slot="start"></ion-icon>
+            <ion-label>Contact</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>
