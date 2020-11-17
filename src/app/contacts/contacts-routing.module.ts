@@ -9,7 +9,7 @@ const routes: Routes = [
     component: ContactsPage
   },
   {
-    path: 'detail/:contactId',
+    path: 'detail/:key',
     loadChildren: () => import('./contact-detail/contact-detail.module').then( m => m.ContactDetailPageModule)
   },
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./new-contact/new-contact.module').then( m => m.NewContactPageModule)
   },
   {
-    path: 'detail/edit/:contactId',
+    path: 'detail/edit/:key',
     loadChildren: () => import('./edit-contact/edit-contact.module').then( m => m.EditContactPageModule)
   }
 ];

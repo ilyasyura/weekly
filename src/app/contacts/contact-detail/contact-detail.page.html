@@ -5,10 +5,10 @@
     </ion-buttons>
     <ion-title>{{loadedContact.nama}}</ion-title>
     <ion-buttons slot="primary">
-      <ion-button [routerLink]="['/', 'contacts', 'detail', 'edit', loadedContact.id]">
+      <ion-button [routerLink]="['/', 'contacts', 'detail', 'edit', key]">
         <ion-icon slot="icon-only" name="create-outline"></ion-icon>
       </ion-button>
-      <ion-button (click)="deleteAlert(loadedContact.id)">
+      <ion-button (click)="deleteAlert(key)">
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-buttons>

@@ -35,16 +35,23 @@ export class NewContactPage implements OnInit {
     // this.contactService.addContact(contacts);
     // this.router.navigateByUrl('/contacts');
 
-    const cont = {
-      id: form.value.id,
-      nama: form.value.nama,
-      phone: form.value.phone,
-      email: form.value.email,
-    };
+    //mysql
+    // const cont = {
+    //   id: form.value.id,
+    //   nama: form.value.nama,
+    //   phone: form.value.phone,
+    //   email: form.value.email,
+    // };
 
-    this.contactService.addContact(cont).subscribe(res => {
+    // this.contactService.addContact(cont).subscribe(res => {
+    //   console.log(res);
+    // });
+
+    //firebase
+    this.contactService.addContact(form.value).then(res => {
       console.log(res);
-    });
+      this.router.navigateByUrl('/contacts');
+    }).catch(error=> console.log(error));
 
     this.router.navigateByUrl('/contacts');
   }
