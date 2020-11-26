@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button href="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Get Current Location</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button color="danger" (click)="showCurrentLoc()" expand="full">CURRENT LOCATION</ion-button>
+  <div #map id="map">
+  </div>
+</ion-content>

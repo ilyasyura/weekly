@@ -59,6 +59,18 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./week11/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
+  {
+    path: 'week12/display-map',
+    loadChildren: () => import('./week12/display-map/display-map.module').then( m => m.DisplayMapPageModule)
+  },
+  {
+    path: 'week12/current-loc',
+    loadChildren: () => import('./week12/current-loc/current-loc.module').then( m => m.CurrentLocPageModule)
+  },
+  {
+    path: 'week12/loc-coordinate',
+    loadChildren: () => import('./week12/loc-coordinate/loc-coordinate.module').then( m => m.LocCoordinatePageModule)
+  },
 ];
 
 @NgModule({
