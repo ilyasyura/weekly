@@ -27,6 +27,9 @@
         <ion-input type="text" ngModel="{{loadedContact.email}}" name="email" value="{{loadedContact.email}}"></ion-input>
       </ion-item>
     </ion-list>
+    <ion-input type="number" ngModel name="lat" value="{{dataLat}}" hidden></ion-input>
+      <ion-input type="number" ngModel name="lng" value="{{dataLng}}" hidden></ion-input>
     <ion-button type="submit" solor="primary" expand="full">Simpan</ion-button>
   </form>
+  <div #map id="map"></div>
 </ion-content>

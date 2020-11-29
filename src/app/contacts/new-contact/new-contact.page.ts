@@ -25,8 +25,8 @@ export class NewContactPage implements OnInit {
   res: any=[];
   data: Observable<any>;
 
-  dataLat: string;
-  dataLng: string;
+  dataLat: number;
+  dataLng: number;
   // contacts: Contacts[];
   constructor(
     private contactService: ContactsService,
