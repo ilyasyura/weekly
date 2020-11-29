@@ -102,6 +102,7 @@ export class ContactsService {
 
   //firebase
   updateContact(key: string, value: any):Promise<void>
-{
-  return this.contactRef.update(key, value);
-}}
+  {
+    return this.contactRef.update(key, value);
+  }
+}

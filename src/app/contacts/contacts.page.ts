@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../week11/services/auth.service';
 import { Contacts } from './contacts.model';
 import { ContactsService } from './contacts.service';
 
@@ -12,9 +14,12 @@ import { ContactsService } from './contacts.service';
 export class ContactsPage implements OnInit {
 
   contacts: any;
+  userNow: any;
   private contactSub: Subscription;
   constructor(
-    private contactService: ContactsService
+    private contactService: ContactsService,
+    private authSrv: AuthService,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
@@ -29,6 +34,11 @@ export class ContactsPage implements OnInit {
     //   console.log(res);
     // })
 
+    this.authSrv.userDetails().subscribe(res => {
+      console.log(res);
+      this.userNow = res;
+    })
+
     this.contactService.getAllContacts().snapshotChanges().pipe(
       map(changes =>
         changes.map(c => ({key: c.payload.key, ...c.payload.val()}))
@@ -39,6 +49,17 @@ export class ContactsPage implements OnInit {
     });
   }
 
+  logout(){
+    this.authSrv.logoutUser()
+      .then(res=>{
+        console.log(res);
+        this.navCtrl.navigateBack('/contacts');
+        window.location.reload();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   // ionViewDidEnter(){
   //   this.contactService.getAllContacts().subscribe((res) => {
   //     this.contacts = res;

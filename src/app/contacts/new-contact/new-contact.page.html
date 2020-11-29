@@ -26,7 +26,10 @@
         <ion-label position="floating">Email</ion-label>
         <ion-input type="text" ngModel name="email"></ion-input>
       </ion-item>
+      <ion-input type="number" ngModel name="lat" value="{{dataLat}}" hidden></ion-input>
+      <ion-input type="number" ngModel name="lng" value="{{dataLng}}" hidden></ion-input>
     </ion-list>
     <ion-button type="submit" color="primary" expand="full">Simpan</ion-button>
   </form>
+  <div #map id="map"></div>
 </ion-content>

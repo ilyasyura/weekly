@@ -4,7 +4,7 @@
       <ion-menu-button menu="weekly"></ion-menu-button>
     </ion-buttons>
     <ion-title>Contacts</ion-title>
-    <ion-buttons slot="primary">
+    <ion-buttons slot="primary" *ngIf="userNow !== null">
       <ion-button [routerLink]="['/', 'contacts', 'new-contact']">
         <ion-icon name="add-outline"></ion-icon>
       </ion-button>
@@ -19,3 +19,15 @@
     </ion-item>
   </ion-list>
 </ion-content>
+
+<ion-footer (click)="logout()" *ngIf="userNow !== null">
+  <ion-toolbar color="secondary">
+    <ion-title>Log out</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-footer [routerLink]="['/login']" *ngIf="userNow === null">
+  <ion-toolbar color="secondary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-footer>

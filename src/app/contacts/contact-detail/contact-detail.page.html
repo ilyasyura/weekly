@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/contacts"></ion-back-button>
     </ion-buttons>
     <ion-title>{{loadedContact.nama}}</ion-title>
-    <ion-buttons slot="primary">
+    <ion-buttons slot="primary" *ngIf="userNow !== null">
       <ion-button [routerLink]="['/', 'contacts', 'detail', 'edit', key]">
         <ion-icon slot="icon-only" name="create-outline"></ion-icon>
       </ion-button>
@@ -31,4 +31,6 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
+  <br>
+  <div #map id="map"></div>
 </ion-content>
